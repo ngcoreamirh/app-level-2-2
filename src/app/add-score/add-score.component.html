@@ -1,0 +1,66 @@
+<div class="add-score-panel">
+    <div class="title">افزودن نمره</div>
+    <span id="resize"></span>
+    <div class="main">
+
+        <div class="header">
+            <input type="text" placeholder="نام دانشجو" [(ngModel)]="studentName">  <!-- twoWayBinding روش -->
+            <select #selectedCourse> <!-- templateRefrence روش -->
+                <option value="0">درس را انتخاب کنید</option>
+                <option *ngFor="let course of courseList" [value]="course.courceId">{{course.courseTitle}}</option>
+            </select>
+            <input type="number" max="20" min="0" placeholder="نمره" #courseScore> <!-- templateRefrence روش -->
+            <button type="button" (click)="onAddScore(selectedCourse,courseScore.value)"
+                [disabled]="alertMessage !==''">+</button>
+                <!-- 
+                    برای شرط گذاری حتما لازم نیست متغیر جدید تعریف کنیم
+                    میتونیم از متغیرهای موجود استفاده بهینه کنیم 
+                    ما دو تا شرط مربوط به پروگرس بار رو با یه متغیر رشته ای آلرت مسیج هندل کردیم
+                -->
+        </div>
+        
+        <div class="alert-message" id="alert-message">{{alertMessage}}</div>
+        <!-- به این 👇🏻 میگن یه شرط حرفه ای -->
+        <div id="progress-container" *ngIf="alertMessage !== ''"><div id="progress"></div></div>
+        
+        <div class="content">
+            <div class="score-item" *ngFor="let score of scoreList">
+                <div>
+                   <span class="title">نام:</span>
+                   <span>{{score.studentName}}</span>
+                </div>
+                <div>
+                    <span class="title">درس:</span>
+                    <span>{{score.course.courseTitle}} کد ({{score.course.courceId}})</span>
+                </div>
+                <div>
+                    <span class="title">نمره:</span>
+                    <span [style]="
+                                (score.courseScore < 10) ? 'color: black' : 
+                                (score.courseScore >= 10 && score.courseScore < 19) ? 'color: white' : 
+                                (score.courseScore >= 19) ? 'color: white' : ''
+                            "
+                            [class]="
+                                (score.courseScore < 10) ? 'rejected' :
+                                (score.courseScore >= 10 && score.courseScore < 19) ? 'passed' :
+                                (score.courseScore >= 18) ? 'gold' : ''
+                            " 
+                            [title]="(score.courseScore >= 10) ? 'قبول' : 'مردود' ">
+                        <b>
+                            {{score.courseScore}}
+                            <span class="icon" *ngIf="score.courseScore < 10">🚫</span>
+                            <span class="icon" *ngIf="score.courseScore >= 10 && score.courseScore < 19">✅</span>
+                            <span class="icon" *ngIf="score.courseScore >= 19">🌟</span>
+                        </b>
+                    </span>
+                </div>
+                <div>
+                    <span (click)="onDeleteScore(score)" title="حذف">
+                        ❌
+                    </span>
+                </div>
+            </div>
+            <h5 class="alert" *ngIf="scoreList.length == 0">لیست نمرات خالی میباشد 😯</h5>
+        </div>
+    </div>
+</div>

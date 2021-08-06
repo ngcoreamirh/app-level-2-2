@@ -1,0 +1,12 @@
+
+@mixin displayFlex($flex-direction:unset, $justify-content:unset, $align-items:unset, 
+                   $flex-warp:unset, $row-gap:unset, $column-gap:unset ,$gap:unset) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $flex-warp;
+    row-gap: $row-gap;
+    column-gap: $column-gap;
+    gap: $gap;
+}

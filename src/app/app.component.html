@@ -1,0 +1,62 @@
+<header>
+  <div id="logo-image"></div>
+  <div class="main">
+       <div class="title">app-level2-2</div>
+       <div class="description">First Training Application <span class="mark mark3">Add Score Project</span></div>
+       <div class="description">Source No. 3</div>
+       <div class="link-wrapper">
+          <div class="link">
+            <a href="https://t.me/angularescort" class="btn-flip telegram" data-back="angularescort" data-front="Telegram" target="_blank"></a>
+            <a href="https://github.com/ngcoreamirh" class="btn-flip github" data-back="ngcoreamirh" data-front="Github" target="_blank"></a>
+            <a href="https://stackblitz.com/@ngcoreamirh" class="btn-flip stackblitz" data-back="ngcoreamirh" data-front="Stackblitz" target="_blank"></a>
+          </div>
+       </div>
+  </div>
+
+</header>
+
+<app-add-score></app-add-score>
+    
+<div class="container" id="a" (click)="closeModal()"></div>
+
+<div class="modal" id="b">
+    <div class="close" id="cancel" (click)="closeModal()"><button>✖</button></div>
+
+    <div class="tips-panel">
+      <h4>مباحث موجود در این سورس:</h4>
+        <span class="tag">twoWayBinding</span>
+        <span class="tag">TemplateRefrence</span>
+        <span class="tag">properyBinding</span>
+        <span class="tag">style & class Binding</span>
+        <span class="tag">interface</span>
+        <span class="tag">structuralDirectives</span>
+        <span class="tag">ViewChild@</span>
+        <span class="tag">arrayList</span> 
+    </div>
+
+    <div class="tips-panel">
+      <h4>نکات توضیحی:</h4>
+        <p> سعی کردم تو نوشتن این سورس از روش های مختلفی استفاده کنم تا دستتون بیاد چه کارایی امکان پذیره. پس لزوما از بهترین روش ها استفاده نشده</p>
+        <p>دقت کنید که برای گریدبندی از <span class="mark mark1">bootstrap</span> استفاده نکردیم و به جاش از <span class="mark mark2">flex</span> استفاده شده. حتی <span class="mark mark2">modal</span> رو دستی درست کردیم</p>
+        <p>تو این سورس از هیچ پکیج و لایبرری ای استفاده نشده. همونطور که میبینید همه چی رو دستی درست کردیم. اما تو پروژه های واقعی این یه مزیت محسوب نمیشه! وقتی پکیج هایی برا نیازهای ما به صورت آماده وجود داره چرا خودمون کلی وقت بزاریم و بنویسیمشون</p>
+        <p><span class="mark mark5">position</span> قسمت اینپوت هارو <span class="mark mark3">sticky</span> گذاشتم. اسکرول کنید پایین مشاهده کنید</p>
+        <p>سعی کردم تو نوشتن این سورس از روش های مختلفی استفاده کنم تا دستتون بیاد چه کارایی امکان پذیره. پس لزوما از بهترین روش ها استفاده نشده</p>
+        <p>استایل هارو هم براش وقت گذاشتم تا جذابیت بصری داشته باشه و از این لحاظ هم مفید باشه. یه فرانت کار باید تو همه جنبه های فرانت قوی باشه. دیزاین و استایل هم از مهمترین بخش های فرانت هست</p>
+        <p>اموجی هایی که گذاشتم رو میتونید با زدن دکمه <span class="mark mark4">. + widows</span> (ویندوز + نقطه) استفاده کنید. البته من <span class="mark mark5">windows 10</span> دارم و نمیدونم تو ویندوز های دیگه کار میکنه یا نه</p>
+    </div>
+    
+    <div class="image">
+      <img src="/assets/images/clipart.png">
+      <div class="logo-image">
+        <img src="/assets/images/author.jpg">
+        <small>امیــرحسیـــن قاســــمی</small>
+      </div>
+      <img class="left" src="/assets/images/clipart.png">
+    </div>
+</div>
+
+<div class="tips" (click)="openModal()">
+  <img src="/assets/images/clipart.png">
+  <span>نکات برنامه</span>
+  <img class="left" src="/assets/images/clipart.png">
+</div>

@@ -1,0 +1,20 @@
+$radius-4 : 4px; 
+$radius-8 : 8px; 
+$radius-16 : 16px; 
+$radius-32 : 32px; 
+
+.as-radius-4 {
+    border-radius: $radius-4;
+}
+
+.as-radius-8 {
+    border-radius: $radius-8;
+}
+
+.as-radius-16 {
+    border-radius: $radius-16;
+}
+
+.as-radius-32 {
+    border-radius: $radius-32;
+}
